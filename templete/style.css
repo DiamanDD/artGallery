@@ -1,36 +1,17 @@
-body{
+* {
+    box-sizing: border-box;
+}
+
+body {
     margin: 0;
     background-color: #5877a8;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;/*100% высоты нашего экрана*/
-    width: 100%;
-
-}
-
-.container{
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 25%;
-    gap: 50px;
 }
 
-.centering{
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-.imgCart{
-    background-image: url(./img/852ffe96161347.5ea83b4dcd691.png);
+.imgCart {
     width: 350px;
     height: 240px;
     background-size: cover;
@@ -38,11 +19,147 @@ body{
 
 }
 
-.imgCartCenter{
-    background-image: url(./img/852ffe96161347.5ea83b4dcd691.png);
-    width: 800px;
-    height: 520px;
-    background-size: cover;
-    border: 8px solid white;
+.galleryContainer {
+    display: grid;
+    gap: 20px;
+    grid-template-areas: "imgCart1 imgCart2 imgCart2 imgCart3"
+                         "imgCart4 imgCart2 imgCart2 imgCart5"
+                            "imgCart6 imgCart7 imgCart8 imgCart9 ";
+}
 
+.imgCart1 {
+    grid-area: imgCart1;
+}
+
+.imgCart2 {
+    grid-area: imgCart2;
+    width: 720px;
+    height: 520px;
+}
+
+.imgCart3 {
+    grid-area: imgCart3;
+}
+
+.imgCart4 {
+    grid-area: imgCart4;
+}
+
+.imgCart5 {
+    grid-area: imgCart5;
+}
+
+.imgCart6 {
+    grid-area: imgCart6;
+}
+
+.imgCart7 {
+    grid-area: imgCart7;
+}
+
+.imgCart8 {
+    grid-area: imgCart8;
+}
+
+.imgCart9 {
+    grid-area: imgCart9;
+}
+
+/*.centering {*/
+/*    width: 50%;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    flex-direction: row;*/
+/*    flex-wrap: wrap;*/
+/*    gap: 30px;*/
+/*}*/
+
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(30, 28, 28, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalBody {
+    position: relative;
+    width: 800px;
+    background-color: white;
+    border-radius: 16px;
+}
+
+.closeButton {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border-radius: 6px;
+}
+
+.modalBodyImg {
+    width: inherit;
+    border-radius: inherit;
+}
+
+.nextImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    color: white;
+    font-size: 32px;
+    background-color: rgba(2, 5, 9, 0.87);
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.prevImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    background-color: rgba(2, 5, 9, 0.87);
+}
+
+
+@media (max-width: 480px) {
+    body {
+        height: auto;
+    }
+
+    .modalBody {
+        width: 100%;
+    }
+
+    .galleryContainer {
+        grid-template-areas:    "imgCart1"
+                                "imgCart2"
+                                "imgCart3"
+                                "imgCart4"
+                                "imgCart5"
+                                "imgCart6"
+                                "imgCart7"
+                                "imgCart8"
+                                "imgCart9";
+    }
+
+    .imgCart2 {
+        grid-area: imgCart2;
+        width: 350px;
+        height: 240px;
+    }
 }
